@@ -269,34 +269,8 @@ public class DFA{
 	//													01000	 11100
 	//													00100	 11000
 	//													00010	 10000
-	//													00001  00000
+	//													00001  00000 accepting
 	//													00000  00000 dead (not accepting)
-	//
-	//			TODO: rethink:					at most (input.length*input.length)/2 + 1 for input strings like aaaaaaa
-	//													aaaaaaa  				abababa		     ababa  
-	//													1111111    "":	1111111  ""  : 11111
-	//													1111110  	a:		1010101	 a	 : 10101
-	//													1111100  	b^ab:	0101010	 ab^b: 01010
-	//													1111000   aba:  0010001	 aba:  00101
-	//													1110000   abab: 0001010	 abab: 00010
-	//													1100000   ababa:0000101  ababa:00001
-	//													1000000		ababab^baba:	 ba:   00101
-	//													0000000									 bab:  00010
-	//																									 baba: 00001 
-	//															 abacaba
-	//															 1111111
-	//												a:		 1010101
-	//												ab:		 0100010
-	//												aba^ba:0010001
-	//									ac^bac^abac: 0001000
-	//												abcacba constructed power set of abc
-	//												1111111
-	//									a			1001001
-	//									ab		0100000
-	//									abc		0010000
-	//									abca	0001000
-	//									abcac 0000100
-	//									abcacb
 	//Start State: an all set BitSet the length of the input string
 	//Accepting States: all states but the dead state
 	//Delta Transition:
